@@ -3,6 +3,7 @@ import { Flex, Divider, Text } from '@chakra-ui/react';
 import { Banner } from '../components/Banner/Banner';
 import { Header } from '../components/Header/Header';
 import { TravelTypes } from '../components/TravelTypes/TravelTypes';
+import { Carousel } from '../components/Carousel/Carousel';
 
 export default function Home() {
   return (
@@ -28,6 +29,8 @@ export default function Home() {
       >
         Vamos nessa? <br /> Então escolha seu continente
       </Text>
+
+      <Carousel />
     </Flex>
   );
 }
