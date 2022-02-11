@@ -7,10 +7,10 @@ export const theme = extendTheme({
         bg: 'gray.50',
       },
     },
-    fonts: {
-      body: 'Poppins',
-      heading: 'Poppins',
-    },
+  },
+  fonts: {
+    body: 'Poppins',
+    heading: 'Poppins',
   },
   colors: {
     gray: {
