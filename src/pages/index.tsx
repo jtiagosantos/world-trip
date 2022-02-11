@@ -1,5 +1,14 @@
+import Head from 'next/head';
+import { Header } from '../components/Header/Header';
+
 export default function Home() {
   return (
-    <h1>World Trip</h1>
-  )
+    <>
+      <Head>
+        <title>World Trip</title>
+      </Head>
+
+      <Header />
+    </>
+  );
 }
