@@ -13,6 +13,7 @@ export const ContinentBanner: React.FC<ContinentBannerProps> = ({
     <Flex
       maxW={1440}
       h={500}
+      mx="auto"
       align="flex-end"
       bgImage={continentImageUrl}
       bgPosition="center"
