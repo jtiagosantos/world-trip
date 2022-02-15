@@ -4,7 +4,37 @@
       "id": 1,
       "title": "Europa",
       "subtitle": "O continente mais antigo.",
-      "image_url": "https://images.unsplash.com/photo-1600454021970-351eff4a6554?ixlib=rb-1.2.1"
+      "image_url": "https://images.unsplash.com/photo-1600454021970-351eff4a6554"
+    },
+    {
+      "id": 2,
+      "title": "Oceania",
+      "subtitle": "O menor continente do planeta.",
+      "image_url": "https://images.unsplash.com/photo-1589330273594-fade1ee91647"
+    },
+    {
+      "id": 3,
+      "title": "África",
+      "subtitle": "O terceiro maior continente do mundo.",
+      "image_url": "https://images.unsplash.com/photo-1431727499043-70167d3d8c90"
+    },
+    {
+      "id": 4,
+      "title": "Ásia",
+      "subtitle": "O maior continente em área terrestre do mundo.",
+      "image_url": "https://images.unsplash.com/photo-1480796927426-f609979314bd"
+    },
+    {
+      "id": 5,
+      "title": "América do Sul",
+      "subtitle": "O continente apresenta uma grande biodiversidade.",
+      "image_url": "https://images.unsplash.com/photo-1591533985302-42123fa9240b"
+    },
+    {
+      "id": 6,
+      "title": "América do Norte",
+      "subtitle": "O continente é composto por apenas três países.",
+      "image_url": "https://images.unsplash.com/photo-1580755704223-cb95b31e444c"
     }
   ]
 }
