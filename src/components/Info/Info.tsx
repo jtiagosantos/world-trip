@@ -26,7 +26,7 @@ export const Info: React.FC<InfoProps> = ({
       <Text as="h2" color="#47585B" fontSize="1.3rem" fontWeight="600">
         {text}
         {showInfoTooltip && (
-          <Tooltip label="cidades +100">
+          <Tooltip label="+100 cidades visitadas do mundo">
             <Icon as={InfoOutlineIcon} fontSize="0.9rem" ml="2" opacity={0.6} />
           </Tooltip>
         )}
