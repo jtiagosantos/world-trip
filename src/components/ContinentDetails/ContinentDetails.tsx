@@ -15,7 +15,7 @@ export const ContinentDetails: React.FC<ContinentDetailsProps> = ({
   citiesNumber,
 }) => {
   return (
-    <HStack maxW={1160} mx="auto" my="20" spacing={70}>
+    <HStack maxW={1070} mx="auto" my="20" spacing={70}>
       <Box maxWidth={600} color="#47585B" fontSize="1.3rem" lineHeight="36px">
         {bio}
       </Box>
