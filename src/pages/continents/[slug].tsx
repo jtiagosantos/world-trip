@@ -1,3 +1,5 @@
+import { Box, Flex, HStack, Image, Text } from '@chakra-ui/react';
+import { City } from '../../components/City/City';
 import { ContinentBanner } from '../../components/ContinentBanner/ContinentBanner';
 import { ContinentDetails } from '../../components/ContinentDetails/ContinentDetails';
 import { Header } from '../../components/Header/Header';
@@ -21,6 +23,49 @@ export default function Continent() {
         languagesNumber={60}
         citiesNumber={27}
       />
+
+      <Text
+        color="#47585B"
+        fontSize="1.8rem"
+        fontWeight="500"
+        ml={140}
+        mb="40px"
+      >
+        Cidades +100
+      </Text>
+
+      <Flex maxW={1070} mx="auto" gap="20px" mb={35} wrap="wrap">
+        <City
+          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
+          city="Londres"
+          country="Reino Unido"
+          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
+        />
+        <City
+          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
+          city="Londres"
+          country="Reino Unido"
+          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
+        />
+        <City
+          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
+          city="Londres"
+          country="Reino Unido"
+          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
+        />
+        <City
+          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
+          city="Londres"
+          country="Reino Unido"
+          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
+        />
+        <City
+          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
+          city="Londres"
+          country="Reino Unido"
+          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
+        />
+      </Flex>
     </>
   );
 }
