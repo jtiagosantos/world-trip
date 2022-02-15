@@ -1,12 +1,26 @@
+import { useState, useEffect } from 'react';
 import { Flex } from '@chakra-ui/react';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Continent } from '../../types/continent';
+import { getContinentsService } from '../../services/get-continents';
 import { CarouselItem } from './CarouselItem';
 
 export const Carousel: React.FC = () => {
+  const [continents, setContinents] = useState<Continent[]>([]);
+
+  useEffect(() => {
+    const fetchContinents = async () => {
+      const continents = await getContinentsService();
+      setContinents(continents);
+    };
+
+    fetchContinents();
+  }, []);
+
   return (
     <Flex
       maxW={1240}
@@ -36,13 +50,15 @@ export const Carousel: React.FC = () => {
         keyboard={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       >
-        <SwiperSlide>
-          <CarouselItem
-            imageUrl="https://images.unsplash.com/photo-1600454021970-351eff4a6554?ixlib=rb-1.2.1"
-            title="Europa"
-            subTitle="O continente mais antigo."
-          />
-        </SwiperSlide>
+        {continents.map((continent) => (
+          <SwiperSlide key={continent.id}>
+            <CarouselItem
+              imageUrl={continent.image_url}
+              title={continent.title}
+              subTitle={continent.subtitle}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Flex>
   );
