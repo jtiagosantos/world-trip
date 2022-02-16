@@ -3,25 +3,44 @@ import { City } from '../../components/City/City';
 import { ContinentBanner } from '../../components/ContinentBanner/ContinentBanner';
 import { ContinentDetails } from '../../components/ContinentDetails/ContinentDetails';
 import { Header } from '../../components/Header/Header';
+import { getContinentDetails } from '../../services/get-continent-details';
+import { GetStaticProps } from 'next';
 
-export default function Continent() {
+interface City {
+  id: number;
+  city_image_url: string;
+  city_name: string;
+  country: string;
+  flag_image_url: string;
+}
+
+interface ContinentProps {
+  continentDetails: {
+    continent_name: string;
+    continent_image_url: string;
+    bio: string;
+    countries_number: number;
+    languages_number: number;
+    cities_number: number;
+    major_cities: City[];
+  };
+}
+
+export default function Continent({ continentDetails }: ContinentProps) {
   return (
     <>
       <Header showLeftIcon />
 
       <ContinentBanner
-        continentImageUrl="https://images.unsplash.com/photo-1589262804704-c5aa9e6def89?ixlib=rb-1.2.1"
-        continentName="Europa"
+        continentImageUrl={continentDetails.continent_image_url}
+        continentName={continentDetails.continent_name}
       />
 
       <ContinentDetails
-        bio="A Europa é, por convenção, um dos seis continentes do mundo. 
-          Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se 
-          da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar 
-          Cáspio, o Cáucaso, e o mar Negro a sudeste"
-        countriesNumber={50}
-        languagesNumber={60}
-        citiesNumber={27}
+        bio={continentDetails.bio}
+        countriesNumber={continentDetails.countries_number}
+        languagesNumber={continentDetails.languages_number}
+        citiesNumber={continentDetails.cities_number}
       />
 
       <Text
@@ -35,37 +54,35 @@ export default function Continent() {
       </Text>
 
       <Flex maxW={1070} mx="auto" gap="20px" mb={35} wrap="wrap">
-        <City
-          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
-          city="Londres"
-          country="Reino Unido"
-          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
-        />
-        <City
-          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
-          city="Londres"
-          country="Reino Unido"
-          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
-        />
-        <City
-          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
-          city="Londres"
-          country="Reino Unido"
-          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
-        />
-        <City
-          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
-          city="Londres"
-          country="Reino Unido"
-          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
-        />
-        <City
-          cityImageUrl="https://images.unsplash.com/photo-1581430872221-d1cfed785922?ixlib=rb-1.2.1"
-          city="Londres"
-          country="Reino Unido"
-          flagImageUrl="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
-        />
+        {continentDetails.major_cities.map((city) => (
+          <City
+            key={city.id}
+            cityImageUrl={city.city_image_url}
+            city={city.city_name}
+            country={city.country}
+            flagImageUrl={city.flag_image_url}
+          />
+        ))}
       </Flex>
     </>
   );
 }
+
+export const getStaticPaths = () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const continentName = params.slug as string;
+
+  const [continentDetails] = await getContinentDetails(continentName);
+
+  return {
+    props: {
+      continentDetails,
+    },
+  };
+};
