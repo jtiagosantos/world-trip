@@ -56,6 +56,7 @@ export const Carousel: React.FC = () => {
               imageUrl={continent.image_url}
               title={continent.title}
               subTitle={continent.subtitle}
+              slug={continent.slug}
             />
           </SwiperSlide>
         ))}
