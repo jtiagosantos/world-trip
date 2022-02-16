@@ -1,26 +1,13 @@
-import { useState, useEffect } from 'react';
 import { Flex } from '@chakra-ui/react';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Continent } from '../../types/continent';
-import { getContinentsService } from '../../services/get-continents';
 import { CarouselItem } from './CarouselItem';
+import { SSGContinents } from '../../types/ssg-continents';
 
-export const Carousel: React.FC = () => {
-  const [continents, setContinents] = useState<Continent[]>([]);
-
-  useEffect(() => {
-    const fetchContinents = async () => {
-      const continents = await getContinentsService();
-      setContinents(continents);
-    };
-
-    fetchContinents();
-  }, []);
-
+export const Carousel: React.FC<SSGContinents> = ({ continents }) => {
   return (
     <Flex
       maxW={1240}

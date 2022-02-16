@@ -4,8 +4,11 @@ import { Banner } from '../components/Banner/Banner';
 import { Header } from '../components/Header/Header';
 import { TravelTypes } from '../components/TravelTypes/TravelTypes';
 import { Carousel } from '../components/Carousel/Carousel';
+import { GetStaticProps } from 'next';
+import { getContinentsService } from '../services/get-continents';
+import { SSGContinents } from '../types/ssg-continents';
 
-export default function Home() {
+export default function Home({ continents }: SSGContinents) {
   return (
     <Flex flexDirection="column" align="center">
       <Head>
@@ -30,7 +33,15 @@ export default function Home() {
         Vamos nessa? <br /> Então escolha seu continente
       </Text>
 
-      <Carousel />
+      <Carousel continents={continents} />
     </Flex>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const continents = await getContinentsService();
+
+  return {
+    props: { continents },
+  };
+};
