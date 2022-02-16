@@ -3,4 +3,5 @@ export interface Continent {
   title: string;
   subtitle: string;
   image_url: string;
+  slug: string;
 }
