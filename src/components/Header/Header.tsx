@@ -17,7 +17,11 @@ export const Header: React.FC<HeaderProps> = ({ showLeftIcon = false }) => {
         <Icon
           as={ChevronLeftIcon}
           position="absolute"
-          left={100}
+          left={{
+            base: 8,
+            md: 50,
+            lg: 100,
+          }}
           fontSize={32}
           cursor="pointer"
           onClick={navigateToHomePage}

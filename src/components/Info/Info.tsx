@@ -18,12 +18,30 @@ export const Info: React.FC<InfoProps> = ({
         as="h1"
         align="center"
         color="#FFBA08"
-        fontSize="2.8rem"
-        fontWeight="600"
+        fontSize={{
+          base: '1.5rem',
+          md: '2.3rem',
+          lg: '2.8rem',
+        }}
+        fontWeight={{
+          base: 'normal',
+          md: '600',
+        }}
       >
         {number}
       </Text>
-      <Text as="h2" color="#47585B" fontSize="1.3rem" fontWeight="600">
+      <Text
+        as="h2"
+        color="#47585B"
+        fontSize={{
+          base: '1rem',
+          md: '1.3rem',
+        }}
+        fontWeight={{
+          base: 'normal',
+          md: '600',
+        }}
+      >
         {text}
         {showInfoTooltip && (
           <Tooltip label="+100 cidades visitadas do mundo">
