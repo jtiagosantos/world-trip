@@ -43,7 +43,7 @@ export default function Continent({ continentDetails }: ContinentProps) {
         citiesNumber={continentDetails.cities_number}
       />
 
-      <Box maxW={1140} mb={35} px={10}>
+      <Box maxW={1440} w="100%" mb={35} px={10}>
         <Text
           mb="40px"
           color="#47585B"
@@ -56,7 +56,7 @@ export default function Continent({ continentDetails }: ContinentProps) {
           Cidades +100
         </Text>
 
-        <Flex mx="auto" gap="20px" wrap="wrap" justify="center">
+        <Flex mx="auto" gap="27px" wrap="wrap" justify="center">
           {continentDetails.major_cities.map((city) => (
             <City
               key={city.id}

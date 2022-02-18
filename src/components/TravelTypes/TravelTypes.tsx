@@ -11,7 +11,7 @@ export const TravelTypes: React.FC = () => {
         base: '10',
         md: '20',
       }}
-      gap={30}
+      gap={70}
       justify="center"
       flexWrap="wrap"
     >
