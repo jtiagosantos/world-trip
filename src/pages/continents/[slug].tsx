@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { City } from '../../components/City/City';
 import { ContinentBanner } from '../../components/ContinentBanner/ContinentBanner';
 import { ContinentDetails } from '../../components/ContinentDetails/ContinentDetails';
