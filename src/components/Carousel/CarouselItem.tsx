@@ -22,6 +22,10 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({
       bgSize="cover"
       w="100%"
       h="100%"
+      _hover={{
+        cursor: 'pointer',
+        opacity: 0.95,
+      }}
     >
       <Link href={`/continents/${slug}`}>
         <Flex
