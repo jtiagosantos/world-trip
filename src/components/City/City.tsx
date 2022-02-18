@@ -39,7 +39,7 @@ export const City: React.FC<CityProps> = ({
             {country}
           </Text>
         </Box>
-        <Image src={flagImageUrl} w={50} h={33} borderRadius={5} />
+        <Image src={flagImageUrl} w={33} h={33} borderRadius="full" />
       </Flex>
     </Box>
   );
