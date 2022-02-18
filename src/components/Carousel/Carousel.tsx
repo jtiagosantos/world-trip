@@ -11,15 +11,22 @@ export const Carousel: React.FC<SSGContinents> = ({ continents }) => {
   return (
     <Flex
       maxW={1240}
-      h={450}
+      w="100%"
+      h={{
+        base: 250,
+        md: 350,
+        lg: 450,
+      }}
       mb="20"
       css={{
         '.swiper-button-next': {
           color: '#FFBA08',
         },
+
         '.swiper-button-prev': {
           color: '#FFBA08',
         },
+
         '.swiper-pagination-bullet': {
           background: '#FFFFFF',
 

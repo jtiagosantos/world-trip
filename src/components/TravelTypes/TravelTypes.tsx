@@ -1,13 +1,45 @@
-import { Image, HStack } from '@chakra-ui/react';
+import { Image, Flex } from '@chakra-ui/react';
 
 export const TravelTypes: React.FC = () => {
   return (
-    <HStack maxW={1160} maxH={145} mx="auto" spacing={150} my="20">
-      <Image src="/assets/images/nightlife.svg" alt="nightlife" />
-      <Image src="/assets/images/beach.svg" alt="beach" />
-      <Image src="/assets/images/modern.svg" alt="modern" />
-      <Image src="/assets/images/classic.svg" alt="classic" />
-      <Image src="/assets/images/more.svg" alt="more" />
-    </HStack>
+    <Flex
+      maxW={1160}
+      w="100%"
+      mx="auto"
+      px="5"
+      my={{
+        base: '10',
+        md: '20',
+      }}
+      gap={30}
+      justify="center"
+      flexWrap="wrap"
+    >
+      <Image
+        boxSize={['120px', '150px']}
+        src="/assets/images/nightlife.svg"
+        alt="nightlife"
+      />
+      <Image
+        boxSize={['120px', '150px']}
+        src="/assets/images/beach.svg"
+        alt="beach"
+      />
+      <Image
+        boxSize={['120px', '150px']}
+        src="/assets/images/modern.svg"
+        alt="modern"
+      />
+      <Image
+        boxSize={['120px', '150px']}
+        src="/assets/images/classic.svg"
+        alt="classic"
+      />
+      <Image
+        boxSize={['120px', '150px']}
+        src="/assets/images/more.svg"
+        alt="more"
+      />
+    </Flex>
   );
 };

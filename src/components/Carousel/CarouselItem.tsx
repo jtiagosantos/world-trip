@@ -33,10 +33,29 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({
           h="100%"
           bg="rgba(28, 20, 10, 0.5)"
         >
-          <Text color="#F5F8FA" fontSize="3rem" fontWeight="700">
+          <Text
+            color="#F5F8FA"
+            fontSize={{
+              base: '1.5rem',
+              md: '3rem',
+            }}
+            fontWeight="700"
+          >
             {title}
           </Text>
-          <Text color="#DADADA" fontSize="1.5rem" fontWeight="700">
+          <Text
+            maxW={{
+              base: '280px',
+              md: '100%',
+            }}
+            align="center"
+            color="#DADADA"
+            fontSize={{
+              base: '0.875rem',
+              md: '1.5rem',
+            }}
+            fontWeight="700"
+          >
             {subTitle}
           </Text>
         </Flex>
